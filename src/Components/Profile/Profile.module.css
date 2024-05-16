@@ -1,0 +1,56 @@
+.main {
+    padding-top: 30px;
+    width: 1280px;
+}
+.main img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border-color: #625AD8;
+    object-position: center;
+}
+.h2 {
+    padding-top: 10px;
+    height: 60px;
+    font-size: 40px;
+}
+.info_headline {
+    padding-top: 20px;
+    width: 330px;
+    height: 40px;
+    font-size: 20px;
+}
+.h2, .about, .main, .main img {
+    margin: auto;
+}
+.h2, .about {
+    text-align: center;
+}
+.about {
+    height: 20px;
+}
+.info {
+    flex-direction: row;
+}
+.info p, input, .about {
+    color: #888787;
+}
+.info p, input, span, .about, .info_headline {
+    font-weight: 700;
+}
+.info p, input, span, .about {
+    font-size: 16px;
+}
+.info p, input, span, .main, .info {
+    display: flex;
+}
+.info p, input, span, .main {
+    flex-direction: column;
+}
+.info p, input {
+    margin: 0 20px;
+}
+.info input {
+    border: none;
+    padding: 2px 0;
+}

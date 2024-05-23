@@ -1,7 +1,8 @@
 
 
+const AUTO = 'AUTO'
 const UPPDATA = 'UPPDATA'
-const CHEKEDBUTTONPROFILE = 'CHEKEDBUTTONPROFILE'
+const CHECKEDBUTTONPROFILE = 'CHECKEDBUTTONPROFILE'
 const initialState = {
     userInfo: {
         name: "ゔおろぢみる",
@@ -16,13 +17,13 @@ const initialState = {
         clas: "10-Б",
         age: "15"
     },
-    authorisation: true,
+    authorization: false,
     checkValue: false,
 }
 
 const userReduser = (state = initialState, action) => {
     switch (action.type) {
-        case CHEKEDBUTTONPROFILE:
+        case CHECKEDBUTTONPROFILE:
             return {
                 ...state,
                 checkValue: action.data,
@@ -32,16 +33,29 @@ const userReduser = (state = initialState, action) => {
                 ...state,
                 userInfo: { ...state.userInfo, ...action.data },
             }
+        case AUTO:
+            return {
+                ...state,
+                authorization: action.data,
+            }
         default:
             return state;
     }
 }
-const uppDataAC = (data) => ({
-    type: CHEKEDBUTTONPROFILE,
+const checkedButtonProfileAC = (data) => ({
+    type: CHECKEDBUTTONPROFILE,
     data: data,
 })
 const uppDataInfoAC = (data) => ({
     type: UPPDATA,
     data: data,
 })
-export { userReduser, uppDataAC, uppDataInfoAC };
+const autoAC = (data) => ({
+    type: AUTO,
+    data: data,
+})
+
+export {
+    userReduser,
+    checkedButtonProfileAC, uppDataInfoAC, autoAC
+};

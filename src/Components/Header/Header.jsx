@@ -8,11 +8,11 @@ import style from './Header.module.css';
 const Header = () => {
     const user = useSelector(state => state.user.userInfo);
     const state = useSelector(state => state.header);
-    const authorisation = useSelector(state => state.user.authorisation);
+    const authorization = useSelector(state => state.user.authorization);
     return (
         <header>
             <img src={img} alt="" />
-            {authorisation ?
+            {authorization ?
                 <>
                     <ul>
                         {state.menu.map(item =>
@@ -22,14 +22,14 @@ const Header = () => {
                         )}
                     </ul>
                     <div>
-                        <span>{user.name} {user.surname}</span>
+                        <NavLink to='/my'>{user.name} {user.surname}</NavLink>
                         <img src="#" alt="" />
                     </div>
 
                 </>
                 :
                 <div>
-                    <button>Увійти</button>
+                    <NavLink to='/authorization'>Увійти</NavLink>
                     <img src={userlogo} alt="" />
                 </div>
             }

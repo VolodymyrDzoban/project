@@ -1,10 +1,10 @@
 import { connect, useDispatch, useSelector } from "react-redux"
 import { Profile } from "./Profile"
 
-
 const mapStateToProps = (state) => {
     return {
         checkValue: state.user.checkValue,
+        infoName: state.personData.infoName,
     }
 }
 const mapDispatchToProps = (dispatch) => {

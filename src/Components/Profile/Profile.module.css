@@ -1,47 +1,49 @@
 .main {
     padding-top: 30px;
-    width: 1280px;
+    width: 800px;
+    padding: 100px 20px;
 }
 .main img {
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    border-color: #625AD8;
-    object-position: center;
+    border: 10px solid#625AD8;
+
 }
-.h2 {
+.main h2 {
     padding-top: 10px;
-    height: 60px;
+    margin: 20px auto;
     font-size: 40px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.250);
 }
 .info_headline {
-    padding-top: 20px;
-    width: 330px;
-    height: 40px;
+    margin: 20px 0;
     font-size: 20px;
 }
-.h2, .about, .main, .main img {
+.section1 {
+    border: 3px solid #625AD8;
+    border-radius: 25px 25px 0 0;
+    padding: 13px 15px 30px;
+    justify-content: space-between;
+}
+.main, .main img {
     margin: auto;
-}
-.h2, .about {
-    text-align: center;
-}
-.about {
-    height: 20px;
 }
 .info {
     flex-direction: row;
 }
-.info p, input, .about {
+.info p, input {
     color: #888787;
 }
-.info p, input, span, .about, .info_headline {
+.info p, input, span, .info_headline {
     font-weight: 700;
 }
-.info p, input, span, .about {
+.info p, input, span {
     font-size: 16px;
 }
-.info p, input, span, .main, .info {
+.info p, input, span, .main, .info, .section1 {
     display: flex;
 }
 .info p, input, span, .main {

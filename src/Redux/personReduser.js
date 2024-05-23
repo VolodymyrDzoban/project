@@ -1,6 +1,13 @@
 
 const initialState = {
-
+    infoName: [
+        'Клас:',
+        'Поштова скринька:',
+        'Вік:',
+        'Номер телефону:',
+        'Номер телефону батьків:',
+        'Дата народження:'
+    ]
 }
 
 const personReduser = (state = initialState, action) => {

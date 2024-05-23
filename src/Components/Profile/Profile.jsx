@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import personlogo from './../../img/person-logo.png';
 import styles from './Profile.module.css';
 import { useState } from "react";
-import { uppDataAC, uppDataInfoAC } from "../../Redux/userReduser";
+import { checkedButtonProfileAC, uppDataInfoAC } from "../../Redux/userReduser";
 
 
 const Profile = (props) => {
@@ -15,14 +15,6 @@ const Profile = (props) => {
         parents_tel: user.parents_tel,
         birth: user.birth
     });
-    const infoName = [
-        'Клас:',
-        'Поштова скринька:',
-        'Вік:',
-        'Номер телефону:',
-        'Номер телефону батьків:',
-        'Дата народження:'
-    ];
     const change = (e) => {
         const { name, value } = e.target;
         setInfo(state => ({
@@ -32,14 +24,14 @@ const Profile = (props) => {
     };
     return (
         <main className={styles.main}>
-            <img src={user.logo ? user.logo : personlogo} alt="" />
-            <h2 className={styles.h2}>{user.name} {user.surname}</h2>
+            <img src={user.logo ? user.logo : personlogo} alt="" className={styles.img} />
+            <h2>{user.name} {user.surname}</h2>
             <div className={styles.info_headline}>Інформація про користувача</div>
-            <section>
+            <section className={styles.section1}>
                 <div className={styles.info}>
                     <div>
                         {
-                            Object.values(infoName).map((value, index) => (
+                            props.infoName.map((value, index) => (
                                 <span key={index}>{value}</span>
                             ))
                         }
@@ -63,7 +55,7 @@ const Profile = (props) => {
                     </div>
                 </div>
                 <button onClick={() => {
-                    dispatch(uppDataAC(!props.checkValue))
+                    dispatch(checkedButtonProfileAC(!props.checkValue))
                     dispatch(uppDataInfoAC(info))
                 }}>
                     {props.checkValue ? 'Зберегти зміни' : 'Редагувати дані'}

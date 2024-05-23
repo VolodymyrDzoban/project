@@ -5,6 +5,7 @@ import { golovnaReduser } from "./golovnaReduser";
 import { userReduser } from "./userReduser";
 import { coursesReduser } from "./coursesReduser";
 import { personReduser } from "./personReduser";
+import { adminReduser } from "./adminReduser";
 
 
 const rootReducer = combineReducers({
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
     user: userReduser,
     courses: coursesReduser,
     personData: personReduser,
+    admin: adminReduser,
 })
 
 const store = createStore(rootReducer, composeWithDevTools())

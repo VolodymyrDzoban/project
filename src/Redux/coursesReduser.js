@@ -1,5 +1,6 @@
 
 
+const ADDCOURSE = 'ADDCOURSE'
 const initialState = [
     {
         id: 0, title: "Інформатика", description: "Крутяк Н. О.",
@@ -35,11 +36,18 @@ const initialState = [
 
 const coursesReduser = (state = initialState, action) => {
     switch (action.type) {
-        case ' ':
-            break;
+        case ADDCOURSE:
+            return state; //не робоче
         default:
             return state;
     }
 }
+const addCourseAC = (data) => ({
+    type: ADDCOURSE,
+    data: data,
+})
 
-export { coursesReduser };
+export {
+    coursesReduser,
+    addCourseAC
+};
